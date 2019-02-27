@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "forces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "name for this force"
+          },
+          "color": {
+            "type": "string",
+            "format": "color",
+            "description": "Default color for this force"
+          },
+          "icon": {
+            "type": "string",
+            "format": "url",
+            "description": "URL to SVG/PNG icon for this force"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "title": "message_type",
+                    "format": "text",
+                    "enum": [
+                      "RFI",
+                      "TimeUpdate",
+                      "Weather"
+                    ]
+                  },
+                  "format": "table"
+                }
+              },
+              "title": "role"
+            }
+          }
+        },
+        "title": "force",
+        "format": "grid"
+      }
+    }
+  },
+  "title": "wargame"
+}
